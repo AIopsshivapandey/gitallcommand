@@ -9,8 +9,7 @@ module "env-dev-vnet" {
 }
 
 module "env-dev-snet" {
-  depends_on           = [module.env-dev-vnet]
-  source               = "../../module/azurerm-snet"
-  var-mod-snet         = var.var-env-dev-snet
-  var-mod-bastion-snet = var.var-env-dev-bastion-snet
+  depends_on   = [module.env-dev-vnet]
+  source       = "../../module/azurerm-snet"
+  var-mod-snet = var.var-env-dev-snet
 }
