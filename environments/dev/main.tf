@@ -13,3 +13,10 @@ module "env-dev-snet" {
   source       = "../../module/azurerm-snet"
   var-mod-snet = var.var-env-dev-snet
 }
+
+module "env-dev-nsg" {
+  depends_on  = [module.env-dev-rg]
+  source      = "../../module/azurerm-nsg"
+  var-mod-nsg = var.var-env-dev-nsg
+}
+
